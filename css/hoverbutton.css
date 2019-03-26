@@ -1,0 +1,105 @@
+/*HoverButton-1*/
+
+a.hbutton-1 {
+	position: relative;
+	display: inline-block;
+	width: 160px;
+	height: 60px;
+	text-align: center;
+	line-height: 60px;
+	text-transform: uppercase;
+	color: #fff;
+	font-family: sans-serif;
+	text-decoration: none;
+	transition: .5s;
+	z-index: 1;
+	overflow: hidden;
+}
+
+a.hbutton-1:hover {
+	color: #262626;
+}
+
+a.hbutton-1:not(:hover) {
+	color: #fff;
+	transition-delay: 1s;
+}
+
+a.hbutton-1:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #262626;
+	z-index: -1;
+	transition: .5s;
+	box-sizing: border-box;
+}
+
+/*a.hbutton-1:hover:before {
+	top: calc(100% - 2px);
+}
+
+a.hbutton-1:not(:hover):before {
+	top: 0;
+	transition-delay: 1s;
+}*/
+
+a.hbutton-1:hover:before {
+	transform: translateY(calc(100% - 2px));
+}
+
+a.hbutton-1:not(:hover):before {
+	transform: translateY(0);
+	transition-delay: 1s;
+}
+
+a.hbutton-1:after {
+	content: '';
+	position: absolute;
+	top: calc(-100% + 2px);
+	left: 50%;
+	width: 100%;
+	height: 100%;
+	background: #262626;
+	z-index: -1;
+	transition: .5s;
+	box-sizing: border-box;
+}
+
+a.hbutton-1:hover:after {
+	left: 0%;
+	width: 100%;
+	transition-delay: .5s;
+}
+
+a.hbutton-1:not(:hover):after {
+	left: 50%;
+	width: 0%;
+	transition-delay: .5s;
+}
+
+a.hbutton-1 span {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-left: 3px solid #262626;
+	border-right: 3px solid #262626;
+	box-sizing: border-box;
+	transform: scaleY(0);
+	transform-origin: top;
+	transition: .5s;
+}
+
+a.hbutton-1:hover span {
+	transform: scaleY(1);
+	transition-delay: 1s;
+}
+
+a.hbutton-1:not(:hover) span {
+	transform: scaleY(0);
+}
